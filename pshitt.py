@@ -152,7 +152,6 @@ class Pshitt(object):
         self.host_key = paramiko.RSAKey(filename=self.args.key)
 
     def run(self, args):
-        logging.info('Starting SSH server')
         # now connect
         try:
             sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
