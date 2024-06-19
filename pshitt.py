@@ -233,8 +233,10 @@ def main():
     server = Pshitt(args)
     if args.daemon:
         with daemon.DaemonContext():
+            logging.basicConfig(filename=args.log, level=logging.DEBUG if args.verbose else logging.INFO)
             server.run(args)
     else:
+        logging.basicConfig(filename=args.log, level=logging.DEBUG if args.verbose else logging.INFO)
         server.run(args)
 
 
